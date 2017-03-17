@@ -1,2 +1,1 @@
-#month * 12 1 * *
-* * * * * /app/run.sh
+* 12 1 * * /app/run.sh
