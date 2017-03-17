@@ -1,0 +1,7 @@
+version: '2'
+services:
+  certbot:
+    build: .
+    environment:
+    - EMAIL=bot@example.com
+    - DOMAINS=www.example.com,example.com
