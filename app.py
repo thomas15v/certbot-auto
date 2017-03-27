@@ -10,14 +10,17 @@ def redirect_handler_factory():
     class RedirectHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
         def do_GET(self):
             self.send_response(301)
-            self.send_header('Location', "https://" + self.address_string())
+            domain = self.headers['host']
+            if ':' in domain:
+                domain = domain.split(':')[0]
+            self.send_header('Location', "https://" + domain)
             self.end_headers()
 
     return RedirectHandler
 
 
 def main():
-    port = 80
+    port = 8082
     host = '0.0.0.0'
 
     redirectHandler = redirect_handler_factory()
