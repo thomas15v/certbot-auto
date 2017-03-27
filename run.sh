@@ -12,4 +12,4 @@ done
 
 echo $domains
 
-certbot certonly --agree-tos --email $EMAIL --noninteractive --standalone --preferred-challenges tls-sni $domains
+certbot certonly --agree-tos --email $EMAIL --noninteractive --standalone --preferred-challenges http-01 $domains
