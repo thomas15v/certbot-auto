@@ -21,6 +21,7 @@ certbot certonly --agree-tos --email $EMAIL \
     --renew-hook "sh /app/hook.sh" \
     --noninteractive --standalone --preferred-challenges http-01 $domains
 sleep 2
+echo -e "POST /containers/$NGINX/start?stream=0 HTTP/1.1\r\nHost: localhost\n" | nc -U /var/run/docker.sock
 
 echo "starting redirect server"
 
