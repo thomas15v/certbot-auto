@@ -2,7 +2,7 @@
 Certbot with build in cron
 
 ## Usage:
-Define these 2 environment variables:
+Define these environment variables:
 - EMAIL:        Email address required for validation
 - DOMAINS:      Comma separated list of domains
 - NGINX:        The name of the nginx container you want to restart if certificates are valid (nginx will crash first time)
