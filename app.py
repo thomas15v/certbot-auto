@@ -20,7 +20,7 @@ def redirect_handler_factory():
 
 
 def main():
-    port = 8082
+    port = 80
     host = '0.0.0.0'
 
     redirectHandler = redirect_handler_factory()
