@@ -20,6 +20,7 @@ done
 certbot certonly --agree-tos --email $EMAIL \
     --renew-hook "sh /app/hook.sh" \
     --noninteractive --standalone --preferred-challenges http-01 $domains
+sleep 2
 
 echo "starting redirect server"
 
