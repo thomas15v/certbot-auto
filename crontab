@@ -1,1 +1,2 @@
-* 12 1 * * /app/run.sh
+0 6 * * *  /app/run.sh
+0 18 * * * /app/run.sh

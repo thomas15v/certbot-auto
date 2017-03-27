@@ -1,17 +1,21 @@
 version: '2'
 services:
   certbot:
+    #image: thomas15v/certbot-auto
     build: .
     environment:
     - EMAIL=thomas15v@gmail.com
     - DOMAINS=somkotest.tk
+    - NGINX=nginx
     ports:
     - 80:80
+    volumes:
+    - "/var/run/docker.sock:/var/run/docker.sock:ro"
   nginx:
+    container_name: nginx
     image: nginx:alpine
     ports:
       - 443:443
-      - 80:80
     volumes:
      - ./default.conf:/etc/nginx/conf.d/site.conf
     links:

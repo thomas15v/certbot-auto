@@ -26,7 +26,6 @@ def main():
     redirectHandler = redirect_handler_factory()
 
     handler = SocketServer.TCPServer((host, port), redirectHandler)
-    print("serving at port %s" % port)
     handler.serve_forever()
 
 
