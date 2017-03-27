@@ -13,7 +13,7 @@ def redirect_handler_factory():
             domain = self.headers['host']
             if ':' in domain:
                 domain = domain.split(':')[0]
-            self.send_header('Location', "https://" + domain)
+            self.send_header('Location', "https://" + domain + self.path)
             self.end_headers()
 
     return RedirectHandler
