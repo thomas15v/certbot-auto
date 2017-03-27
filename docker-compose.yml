@@ -5,13 +5,14 @@ services:
     environment:
     - EMAIL=thomas15v@gmail.com
     - DOMAINS=somkotest.tk
+    ports:
+    - 8080:8080
   nginx:
     image: nginx:alpine
     ports:
       - 443:443
       - 80:80
     volumes:
-     - ./certbot.conf:/etc/nginx/conf.d/certbot.conf
      - ./default.conf:/etc/nginx/conf.d/site.conf
     links:
      - certbot
