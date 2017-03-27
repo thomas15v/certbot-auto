@@ -12,4 +12,4 @@ done
 
 echo $domains
 
-certbot certonly --agree-tos --email $EMAIL --noninteractive --standalone --preferred-challenges --http-01-port 8080 http-01 $domains
+certbot certonly --agree-tos --email $EMAIL --noninteractive --standalone --preferred-challenges http-01 $domains

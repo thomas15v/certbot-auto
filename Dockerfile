@@ -4,6 +4,6 @@ COPY crontab /var/spool/cron/crontabs/root
 COPY *.sh /app/
 RUN chmod +x /app/*.sh
 
-EXPOSE 8080
+EXPOSE 80
 
 ENTRYPOINT ["sh", "/app/start.sh"]
